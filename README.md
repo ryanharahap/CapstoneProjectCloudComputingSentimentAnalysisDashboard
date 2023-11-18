@@ -1,6 +1,6 @@
 # How to run laravel 
 
-Run di CMD atau terminal:
+Run di CMD atau terminal folder laravel:
 
 `composer install`
 

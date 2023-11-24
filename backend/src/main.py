@@ -4,6 +4,7 @@ from .database import engine
 
 # Routes
 from .user import router as user_router
+from .prediction import router as predict_router
 
 # Models
 from .models import users
@@ -22,6 +23,7 @@ app.add_middleware(
 )
 
 app.include_router(user_router.router)
+app.include_router(predict_router.router)
 
 @app.get('/')
 def check_status():

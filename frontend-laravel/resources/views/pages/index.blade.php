@@ -145,6 +145,46 @@
         </nav>
         <!-- Navbar End -->
 
+        <!-- Filter Dropdown Start -->
+
+<div class="filterx">
+<div class="filter-menu pt-4 px-4">
+        <div class="btn-group col-sm-2 col-xl-2">
+      <button class="btn btn-primary dropdown-toggle " type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+        Negara
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item " href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+      </ul>
+    </div>
+    
+        <div class="btn-group col-sm-2 col-xl-2">
+      <button class="btn btn-primary dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+        Usia
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+      </ul>
+    </div>
+    
+    <div class="btn-group col-sm-2 col-xl-2">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        Jenis Kelamin
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+      </ul>
+    </div>
+</div>
+</div>
+
+        <!-- Filter Dropdown End -->
 
         <!-- Source Sentiment Analysis Start -->
         <div class="container-fluid pt-4 px-4">

@@ -147,54 +147,63 @@
 
         <!-- Filter Dropdown Start -->
 
-<div class="filterx">
-<div class="filter-menu pt-4 px-4">
-    <div class="btn-group col-sm-2 col-xl-2">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-        Jangka Waktu
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item " href="#">Past Hour</a></li>
-        <li><a class="dropdown-item" href="#">Past 5 Hour</a></li>
-        <li><a class="dropdown-item" href="#">Past Day</a></li>
-        <li><a class="dropdown-item" href="#">Past 7 Day</a></li>
-        <li><a class="dropdown-item" href="#">Past 30 Day</a></li>
-      </ul>
-    </div>
+<div class="container-fluid pt-4 px-4">
+    <div class="card">
+        <div class="card-header">
+            <div class="filterx">
+                <div class="filter-menu pt-2 px-4 row">
 
-    <div class="btn-group col-sm-2 col-xl-2">
-      <button class="btn btn-primary dropdown-toggle ms-2" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-        Negara
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item " href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
+                    <div class="btn-group col-md-3 mb-2">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="true" aria-expanded="false">
+                            Negara
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2 ">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                            Usia
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2 ">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                            Jenis Kelamin
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            Others
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="btn-group col-sm-2 col-xl-2">
-      <button class="btn btn-primary dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-        Usia
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-    
-    <div class="btn-group col-sm-2 col-xl-2">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-        Jenis Kelamin
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-</div>
 </div>
 
         <!-- Filter Dropdown End -->

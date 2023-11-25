@@ -15,7 +15,7 @@
         <nav class="navbar bg-light navbar-light">
             <a href="/
             " class="navbar-brand mx-4 mb-3">
-                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>SentDash</h3>
+                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>SENTDASH</h3>
             </a>
             <div class="d-flex align-items-center ms-4 mb-4">
                 <div class="position-relative">
@@ -145,6 +145,68 @@
         </nav>
         <!-- Navbar End -->
 
+        <!-- Filter Dropdown Start -->
+
+<div class="container-fluid pt-4 px-4">
+    <div class="card">
+        <div class="card-header">
+            <div class="filterx">
+                <div class="filter-menu pt-2 px-4 row">
+
+                    <div class="btn-group col-md-3 mb-2">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="true" aria-expanded="false">
+                            Jangka Waktu
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2 ">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                            Negara
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2 ">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                            Usia
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            Jenis Kelamin
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Filter Dropdown End -->
 
         <!-- Source Sentiment Analysis Start -->
         <div class="container-fluid pt-4 px-4">

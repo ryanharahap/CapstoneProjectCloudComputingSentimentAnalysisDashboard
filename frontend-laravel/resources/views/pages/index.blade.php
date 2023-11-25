@@ -156,6 +156,18 @@
                     <div class="btn-group col-md-3 mb-2">
                         <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="true" aria-expanded="false">
+                            Jangka Waktu
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group col-md-3 mb-2 ">
+                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                             Negara
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -177,22 +189,10 @@
                         </ul>
                     </div>
 
-                    <div class="btn-group col-md-3 mb-2 ">
-                        <button class="btn btn-primary dropdown-toggle w-100" type="button"
-                            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                            Jenis Kelamin
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        </ul>
-                    </div>
-
                     <div class="btn-group col-md-3 mb-2">
                         <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
-                            Others
+                            Jenis Kelamin
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#">Menu item</a></li>

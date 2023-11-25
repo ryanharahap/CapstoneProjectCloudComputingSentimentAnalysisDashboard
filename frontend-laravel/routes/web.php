@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/Login', function () { return view('pages/login');});
 Route::get('/Register', function () { return view('pages/register');});
 Route::get('/Chart', function () { return view('pages/chart');});
+Route::get('/Table', function () { return view('pages/table');});
+Route::get('/Ytube', function () { return view('pages/element');});

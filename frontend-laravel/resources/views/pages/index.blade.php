@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.navbar')
 <div class="container-xxl position-relative bg-white d-flex p-0">
     <!-- Spinner Start -->
     <div id="spinner"
@@ -155,7 +155,7 @@
                             <a class="nav-link active" aria-current="true" href="#">Youtube</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Berita</a>
+                            <a class="nav-link" href="/Ytube">Berita</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sosmed</a>

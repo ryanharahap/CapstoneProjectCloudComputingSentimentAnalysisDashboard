@@ -8,6 +8,14 @@ router = APIRouter(
   tags=["predict"]
 )
 
-@router.post("/")
+@router.post("/playstore")
 async def predict(data: InputBase):
-  return PredictionService().predict(data)
+  return PredictionService().playstore_predict(data)
+
+@router.post("/youtube")
+async def predict(data: InputBase):
+  return PredictionService().youtube_predict(data)
+
+@router.post("/news")
+async def predict(data: InputBase):
+  return PredictionService().news_predict(data)

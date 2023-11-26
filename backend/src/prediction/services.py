@@ -9,7 +9,25 @@ class PredictionService:
   def __init__(self):
     self.model = load_model(model_path, compile=False)
   
-  def predict(self, data: InputBase):
+  def playstore_predict(self, data: InputBase):
+    # predictions = self.model.predict(data.sentence)
+    # print(predictions)
+    return {
+      'status': 'success',
+      'input': data.sentence,
+      'prediction': 'Negative'
+    }
+  
+  def youtube_predict(self, data: InputBase):
+    # predictions = self.model.predict(data.sentence)
+    # print(predictions)
+    return {
+      'status': 'success',
+      'input': data.sentence,
+      'prediction': 'Negative'
+    }
+  
+  def news_predict(self, data: InputBase):
     # predictions = self.model.predict(data.sentence)
     # print(predictions)
     return {

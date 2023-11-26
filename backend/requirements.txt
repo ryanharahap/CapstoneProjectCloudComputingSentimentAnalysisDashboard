@@ -8,3 +8,4 @@ passlib[bcrypt]
 keras
 numpy
 tensorflow
+pandas

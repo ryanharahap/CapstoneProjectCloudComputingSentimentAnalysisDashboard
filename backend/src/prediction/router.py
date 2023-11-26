@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 from .services import PredictionService
+from pydantic import BaseModel
+from .schemas import InputBase
 
 router = APIRouter(
   prefix="/predict",
@@ -7,5 +9,5 @@ router = APIRouter(
 )
 
 @router.post("/")
-async def predict():
-  return PredictionService().predict()
+async def predict(data: InputBase):
+  return PredictionService().predict(data)

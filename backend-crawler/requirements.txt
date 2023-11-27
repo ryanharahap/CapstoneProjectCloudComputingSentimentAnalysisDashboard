@@ -1,1 +1,4 @@
 Flask
+google-api-python-client
+python-dotenv
+google-play-scraper

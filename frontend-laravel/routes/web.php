@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 Route::get('/Login', function () { return view('pages/login');});
 Route::get('/Register', function () { return view('pages/register');});
-Route::get('/Result', function () { return view('pages/result');});
-Route::get('/Chart', function () { return view('pages/chart');});
+Route::get('/Youtube', function () { return view('pages/youtube');});
+Route::get('/Playstore', function () { return view('pages/playstore');});
+Route::get('/News', function () { return view('pages/news');});

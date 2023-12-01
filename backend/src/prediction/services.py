@@ -6,9 +6,9 @@ from keras.preprocessing.sequence import pad_sequences
 import pickle
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
-playstore_model_path = os.path.join(current_directory, 'ml-model', 'model_playstore_v1.h5')
+playstore_model_path = os.path.join(current_directory, 'ml-model', 'model_playstore_v2.h5')
 youtube_model_path = os.path.join(current_directory, 'ml-model', 'model_youtube_v1.h5')
-news_model_path = os.path.join(current_directory, 'ml-model', 'model_news_v1.pkl')
+news_model_path = os.path.join(current_directory, 'ml-model', 'model_news_v2.pkl')
 
 # Load the model from the .pkl file
 with open(news_model_path, 'rb') as file:

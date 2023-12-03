@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\YoutubeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/index');
-});
+// Route::get('/', function () {
+//     return view('pages/index');
+// });
+Route::get('/', [YoutubeController::class, 'getPopularVideos']);
 
-Route::get('/Login', function () { return view('pages/login');});
-Route::get('/Register', function () { return view('pages/register');});
-Route::get('/Chart', function () { return view('pages/chart');});
-Route::get('/Table', function () { return view('pages/table');});
-Route::get('/Ytube', function () { return view('pages/element');});
+Route::get('/login', function () { return view('authentication/login');});
+Route::get('/register', function () { return view('authentication/register');});
+
+Route::get('/youtube-search', function () { return view('pages/youtube-pages/youtube-search');});
+Route::get('/youtube-comments', [YoutubeController::class, 'getVideoComments']);
+Route::get('/youtube', function () { return view('pages/youtube-pages/youtube');});
+
+Route::get('/playstore-search', function () { return view('pages/playstore-pages/playstore-search');});
+Route::get('/playstore', function () { return view('pages/playstore-pages/playstore');});
+
+Route::get('/news-search', function () { return view('pages/news-pages/news-search');});
+Route::get('/news', function () { return view('pages/news-pages/news');});

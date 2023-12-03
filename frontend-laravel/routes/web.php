@@ -23,6 +23,7 @@ Route::get('/login', function () { return view('authentication/login');});
 Route::get('/register', function () { return view('authentication/register');});
 
 Route::get('/youtube-search', function () { return view('pages/youtube-pages/youtube-search');});
+Route::get('/youtube-comments', [YoutubeController::class, 'getVideoComments']);
 Route::get('/youtube', function () { return view('pages/youtube-pages/youtube');});
 
 Route::get('/playstore-search', function () { return view('pages/playstore-pages/playstore-search');});

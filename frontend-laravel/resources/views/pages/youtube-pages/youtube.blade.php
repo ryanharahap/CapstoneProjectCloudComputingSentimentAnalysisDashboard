@@ -26,15 +26,18 @@
 
     <!-- Search Start -->
     <div class="search-bar">
-        <div class="font">
-            <label for="basic-url" class="form-label">Your youtube link !</label>
-        </div>
-        <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">hhttps://www.youtube.com/watch?v=</span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <br>
-        <a href="/Youtube" class="btn btn-primary">Submit</a>
+        <form action="/youtube-comments" method="GET">
+            @csrf
+            <div class="font">
+                <label for="basic-url" class="form-label">Your YouTube link !</label>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+                <input type="text" class="form-control" id="basic-url" name="video_id" aria-describedby="basic-addon3">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     <!-- Search End -->
 
@@ -55,30 +58,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($comments['items'] as $key => $comment)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-01-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
+                                    <th scope="row">{{ $key + 1 }}</th>
+                                    <td>{{ $comment['snippet']['topLevelComment']['snippet']['publishedAt'] }}</td>
+                                    <td>{{ $comment['snippet']['topLevelComment']['snippet']['textDisplay'] }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>12-02-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>12-09-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Negatif</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

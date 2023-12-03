@@ -5,3 +5,7 @@ psycopg2
 alembic
 python-jose[cryptography]
 passlib[bcrypt]
+keras
+numpy
+tensorflow
+pandas

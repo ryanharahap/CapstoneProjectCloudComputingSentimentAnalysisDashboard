@@ -58,9 +58,9 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-chart-bar me-2"></i>Analysis</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/Youtube" class="dropdown-item">Youtube</a>
-                            <a href="/Playstore" class="dropdown-item">Playstore</a>
-                            <a href="/News" class="dropdown-item">News</a>
+                            <a href="/youtube-search" class="dropdown-item">Youtube</a>
+                            <a href="/playstore-search" class="dropdown-item">Playstore</a>
+                            <a href="/news-search" class="dropdown-item">News</a>
                         </div>
                     </div>
                 </div>

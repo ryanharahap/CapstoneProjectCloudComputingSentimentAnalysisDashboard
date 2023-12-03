@@ -17,7 +17,7 @@
                     <span class="d-none d-lg-inline-flex">John Doe</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="/Login" class="dropdown-item">Log Out</a>
+                    <a href="/login" class="dropdown-item">Log Out</a>
                 </div>
             </div>
         </div>
@@ -27,14 +27,14 @@
     <!-- Search Start -->
     <div class="search-bar">
         <div class="font">
-            <label for="basic-url" class="form-label">Your News link !</label>
+            <label for="basic-url" class="form-label">Your youtube link !</label>
         </div>
         <div class="input-group">
             <span class="input-group-text" id="basic-addon3">hhttps://www.youtube.com/watch?v=</span>
             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/Youtube" class="btn btn-primary">Submit</a>
     </div>
     <!-- Search End -->
 
@@ -57,27 +57,27 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>12-13-2023</td>
+                                    <td>12-01-2023</td>
                                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
                                         dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
                                         quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
                                     <td>Positif</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
+                                    <th scope="row">2</th>
+                                    <td>12-02-2023</td>
                                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
                                         dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
                                         quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
                                     <td>Positif</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
+                                    <th scope="row">3</th>
+                                    <td>12-09-2023</td>
                                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
                                         dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
                                         quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
+                                    <td>Negatif</td>
                                 </tr>
                             </tbody>
                         </table>

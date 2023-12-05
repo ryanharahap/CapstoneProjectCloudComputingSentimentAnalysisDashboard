@@ -31,13 +31,11 @@ def crawl_playstore():
     result=result
   )
 
-@app.route("/crawl/news", methods=["POST"])
+@app.route("/crawl/news", methods=["GET"])
 @cross_origin()
 def crawl_news():
-  news_url = request.json["news_url"]
-  result = news.crawl(news_url)
+  result = news.crawl()
   return jsonify(
-    news_url=news_url,
     result=result
   )
 

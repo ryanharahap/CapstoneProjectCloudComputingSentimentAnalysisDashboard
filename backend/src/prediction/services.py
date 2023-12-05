@@ -8,11 +8,11 @@ import pickle
 current_directory = os.path.dirname(os.path.realpath(__file__))
 playstore_model_path = os.path.join(current_directory, 'ml-model', 'model_playstore_v2.h5')
 youtube_model_path = os.path.join(current_directory, 'ml-model', 'model_youtube_v1.h5')
-news_model_path = os.path.join(current_directory, 'ml-model', 'model_news_v2.pkl')
+news_model_path = os.path.join(current_directory, 'ml-model', 'model_news_v2.h5')
 
 # Load the model from the .pkl file
-with open(news_model_path, 'rb') as file:
-    loaded_model = pickle.load(file)
+# with open(news_model_path, 'rb') as file:
+#     loaded_model = pickle.load(file)
 
 MAX_LENGTH = 200
 
@@ -20,7 +20,7 @@ class PredictionService:
   def __init__(self):
     self.playstore_model = load_model(playstore_model_path, compile=False)
     self.youtube_model = load_model(youtube_model_path, compile=False)
-    self.news_model = loaded_model
+    self.news_model = load_model(news_model_path, compile=False)
     self.tokenizer = Tokenizer()
   
   def playstore_predict(self, data: InputBase):

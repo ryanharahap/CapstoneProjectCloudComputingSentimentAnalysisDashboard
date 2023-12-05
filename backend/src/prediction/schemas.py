@@ -5,4 +5,4 @@ class InputBase(BaseModel):
   sentence: str
 
 class InputList(BaseModel):
-  items: List[InputBase]
+  sentences: List[str]

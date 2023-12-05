@@ -5,7 +5,7 @@ from playstore import Playstore
 from youtube import Youtube
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, origins="*")
 
 news = News()
 playstore = Playstore()

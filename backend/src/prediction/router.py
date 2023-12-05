@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 from .services import PredictionService
-from pydantic import BaseModel
-from .schemas import InputBase
+from .schemas import InputList
 
 router = APIRouter(
   prefix="/predict",
@@ -9,13 +8,13 @@ router = APIRouter(
 )
 
 @router.post("/playstore")
-async def playstore_prediction(data: InputBase):
+async def playstore_prediction(data: InputList):
   return PredictionService().playstore_predict(data)
 
 @router.post("/youtube")
-async def youtube_prediction(data: InputBase):
+async def youtube_prediction(data: InputList):
   return PredictionService().youtube_predict(data)
 
 @router.post("/news")
-async def news_prediction(data: InputBase):
+async def news_prediction(data: InputList):
   return PredictionService().news_predict(data)

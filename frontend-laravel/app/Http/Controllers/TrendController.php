@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Client;
 
 class TrendController extends Controller
@@ -29,7 +30,36 @@ class TrendController extends Controller
         ]);
 
         $videos = json_decode($response->getBody()->getContents(), true);
+        $videos = $videos['items'];
+        return $videos;
+    }
 
-        return view('/pages/trending-yt', compact('videos'));
+    public function getTrendGoogle()
+    {
+        $url = 'https://indo-pytrends-muf7kziviq-as.a.run.app/trending';
+
+        $response = Http::get($url);
+
+        // Periksa apakah permintaan berhasil
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            $trendResult = $result['data']['trending_queries'];
+
+            return $trendResult;
+        } else {
+            // Tampilkan notifikasi error di frontend jika terjadi kesalahan saat mengambil berita
+            return null;
+        }
+    }
+
+    public function getTrends()
+    {
+        // Get Google Trends
+        $googleTrends = $this->getTrendGoogle();
+
+        // Get Youtube Popular Videos
+        $youtubeTrends = $this->getPopularVideos();
+
+        return view('/pages/trending', compact('googleTrends', 'youtubeTrends'));
     }
 }

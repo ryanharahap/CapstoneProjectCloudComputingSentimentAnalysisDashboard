@@ -28,6 +28,11 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Berita di Indonesia</h2>
     </div>
+    @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
     <!-- Search End -->
 
     <!-- Analysis Start -->
@@ -48,9 +53,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($news as $news)
+                                @foreach ($news as $index => $news)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{ $index + 1 }}</th>
                                     <td>{{ $news['published_date'] }}</td>
                                     <td><a class='news-color' href="{{ $news['link']}}">{{ $news['title'] }}</a></td>
                                     <td>{{ $news['source'] }}</td>

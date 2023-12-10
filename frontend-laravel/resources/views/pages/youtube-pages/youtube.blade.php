@@ -38,6 +38,12 @@
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <br>
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
     </div>
     <!-- Search End -->
 
@@ -46,7 +52,7 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-9">
                 <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4">Details Analysis</h6>
+                    <h6 class="mb-4">Detail Analysis</h6>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -58,9 +64,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($youtube as $youtube)
+                                @foreach($youtube as $index => $youtube)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{ $index + 1 }}</th>
                                     <td>{{ $youtube['updated_at'] }}</td>
                                     <td>{{ $youtube['comment'] }}</td>
                                 </tr>

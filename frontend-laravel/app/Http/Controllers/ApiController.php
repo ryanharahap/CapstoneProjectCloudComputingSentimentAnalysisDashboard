@@ -11,30 +11,48 @@ class ApiController extends Controller
     {
         $url = 'http://localhost:5001/crawl/youtube';
         $data = [
-            'video_id' => $request -> video_id,
+            'video_id' => $request->video_id,
         ];
 
         $response = Http::post($url, $data);
-        $result = json_decode($response->getBody(), true);
 
-        $youtubeResult = $result['result'];
+        // Periksa apakah permintaan berhasil
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            $youtubeResult = $result['result'];
 
-        return view('pages/youtube-pages/youtube', ['youtube' => $youtubeResult]);
+            return view('pages/youtube-pages/youtube', ['youtube' => $youtubeResult]);
+        } else {
+            // Tampilkan notifikasi error di frontend jika video_id tidak ditemukan
+            return back()->with('error', 'Video Id not found');
+        }
     }
 
     public function crawlPlaystore(Request $request)
     {
         $url = 'http://localhost:5001/crawl/playstore';
         $data = [
-            'package_name' => $request -> package_name,
+            'package_name' => $request->package_name,
         ];
 
         $response = Http::post($url, $data);
-        $result = json_decode($response->getBody(), true);
 
-        $playstoreResult = $result['result'];
+        // Periksa apakah permintaan berhasil
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            
+            if (empty($result['result'])) {
+                // Tampilkan pesan kesalahan di halaman yang sama
+                return back()->with('error', 'Playstore data not found');
+            }
 
-        return view('pages/playstore-pages/playstore', ['playstore' => $playstoreResult]);
+            $playstoreResult = $result['result'];
+
+            return view('pages/playstore-pages/playstore', ['playstore' => $playstoreResult]);
+        } else {
+            // Tampilkan notifikasi error di frontend jika package_name tidak ditemukan
+            return back()->with('error', 'Package Name not found');
+        }
     }
 
     public function crawlNews()
@@ -42,10 +60,16 @@ class ApiController extends Controller
         $url = 'http://localhost:5001/crawl/news';
 
         $response = Http::get($url);
-        $result = json_decode($response->getBody(), true);
 
-        $newsResult = $result['result'];
+        // Periksa apakah permintaan berhasil
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            $newsResult = $result['result'];
 
-        return view('pages/news-pages/news', ['news' => $newsResult]);
+            return view('pages/news-pages/news', ['news' => $newsResult]);
+        } else {
+            // Tampilkan notifikasi error di frontend jika terjadi kesalahan saat mengambil berita
+            return back()->with('error', 'Failed to crawl news');
+        }
     }
 }

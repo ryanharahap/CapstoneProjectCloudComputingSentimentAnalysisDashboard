@@ -32,11 +32,17 @@
                 <label for="package_name" class="form-label">Playstore Package Name</label>
             </div>
             <div class="input-group">
-                <input type="text" class="form-control" id="package_name" name="package_name" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="package_name" name="package_name"
+                    aria-describedby="basic-addon3" placeholder="example.com.package">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
     </div>
     <!-- Search End -->
 
@@ -45,7 +51,7 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-9">
                 <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4">Details Analysis</h6>
+                    <h6 class="mb-4">Detail Analysis</h6>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -57,9 +63,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($playstore as $playstore)
+                                @foreach($playstore as $index => $playstore)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{ $index + 1 }}</th>
                                     <td>{{ $playstore['submitted_at'] }}</td>
                                     <td>{{ $playstore['review'] }}</td>
                                 </tr>

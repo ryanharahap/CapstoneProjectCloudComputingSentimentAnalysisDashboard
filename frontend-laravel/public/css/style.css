@@ -278,7 +278,7 @@
 }
 
 .card-text {
-    height: 50px; 
+    height: 30px; 
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap;

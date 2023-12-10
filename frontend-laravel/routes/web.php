@@ -18,7 +18,7 @@ use App\Http\Controllers\ApiController;
 //     return view('pages/index');
 // });
 
-Route::get('/', [TrendController::class, 'getPopularVideos']);
+Route::get('/', [TrendController::class, 'getTrends']);
 
 Route::get('login', function () { return view('authentication/login');});
 Route::get('register', function () { return view('authentication/register');});

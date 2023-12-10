@@ -15,7 +15,8 @@ class News:
     for item in news_items:
       title = item.title.text if item.title else "N/A"
       link = item.link.text if item.link else "N/A"
-      pub_date = item.pub_date.text if item.pub_date else "N/A"
+      pub_date = item.pubDate.text if item.pubDate else "N/A"
+      print(item)
       if (title != "N/A"):
         title_data = title.split(' - ')
         title = title_data[0] if title_data[0] else "N/A"

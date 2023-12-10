@@ -5,3 +5,4 @@ google-play-scraper
 flask-cors
 beautifulsoup4
 lxml
+gunicorn

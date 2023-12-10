@@ -20,7 +20,7 @@ class ApiController extends Controller
         if ($response->successful()) {
             $result = json_decode($response->getBody(), true);
             $youtubeResult = $result['result'];
-
+  
             return view('pages/youtube-pages/youtube', ['youtube' => $youtubeResult]);
         } else {
             // Tampilkan notifikasi error di frontend jika video_id tidak ditemukan
@@ -64,7 +64,6 @@ class ApiController extends Controller
         // Periksa apakah permintaan berhasil
         if ($response->successful()) {
             $result = json_decode($response->getBody(), true);
-
             $newsResult = $result['result'];
 
             return view('pages/news-pages/news', ['news' => $newsResult]);

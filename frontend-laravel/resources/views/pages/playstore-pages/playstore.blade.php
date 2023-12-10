@@ -26,15 +26,17 @@
 
     <!-- Search Start -->
     <div class="search-bar">
-        <div class="font">
-            <label for="basic-url" class="form-label">Your Playstore link !</label>
-        </div>
-        <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">hhttps://www.youtube.com/watch?v=</span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <form action="playstore-crawl" method="GET">
+            @csrf
+            <div class="font">
+                <label for="package_name" class="form-label">Playstore Package Name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" id="package_name" name="package_name" aria-describedby="basic-addon3">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     <!-- Search End -->
 
@@ -55,30 +57,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($playstore as $playstore)
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
+                                    <td>{{ $playstore['submitted_at'] }}</td>
+                                    <td>{{ $playstore['review'] }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

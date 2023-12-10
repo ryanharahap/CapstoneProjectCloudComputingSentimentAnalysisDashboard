@@ -26,15 +26,17 @@
 
     <!-- Search Start -->
     <div class="search-bar">
-        <div class="font">
-            <label for="basic-url" class="form-label">Your youtube link !</label>
-        </div>
-        <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">hhttps://www.youtube.com/watch?v=</span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <br>
-        <a href="/playstore" class="btn btn-primary">Submit</a>
+        <form action="playstore-crawl" method="GET">
+            @csrf
+            <div class="font">
+                <label for="package_name" class="form-label">Playstore Package Name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" id="package_name" name="package_name" aria-describedby="basic-addon3">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     <!-- Search End -->
 </div>

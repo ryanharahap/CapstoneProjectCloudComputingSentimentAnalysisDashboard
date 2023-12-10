@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\YoutubeController;
-
+use App\Http\Controllers\TrendController;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +17,18 @@ use App\Http\Controllers\YoutubeController;
 // Route::get('/', function () {
 //     return view('pages/index');
 // });
-Route::get('/', [YoutubeController::class, 'getPopularVideos']);
 
-Route::get('/login', function () { return view('authentication/login');});
-Route::get('/register', function () { return view('authentication/register');});
+Route::get('/', [TrendController::class, 'getPopularVideos']);
 
-Route::get('/youtube-search', function () { return view('pages/youtube-pages/youtube-search');});
-Route::get('/youtube-comments', [YoutubeController::class, 'getVideoComments']);
-Route::get('/youtube', function () { return view('pages/youtube-pages/youtube');});
+Route::get('login', function () { return view('authentication/login');});
+Route::get('register', function () { return view('authentication/register');});
 
-Route::get('/playstore-search', function () { return view('pages/playstore-pages/playstore-search');});
-Route::get('/playstore', function () { return view('pages/playstore-pages/playstore');});
+Route::get('news-crawl', [ApiController::class, 'crawlNews']);
 
-Route::get('/news-search', function () { return view('pages/news-pages/news-search');});
-Route::get('/news', function () { return view('pages/news-pages/news');});
+Route::get('youtube', function () { return view('pages/youtube-pages/youtube-search');});
+Route::get('youtube-crawl', [ApiController::class, 'crawlYoutube']);
+
+Route::get('playstore', function () { return view('pages/playstore-pages/playstore-search');});
+Route::get('playstore-crawl', [ApiController::class, 'crawlPlaystore']);
+
+

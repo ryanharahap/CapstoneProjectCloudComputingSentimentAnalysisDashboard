@@ -25,16 +25,8 @@
     <!-- Navbar End -->
 
     <!-- Search Start -->
-    <div class="search-bar">
-        <div class="font">
-            <label for="basic-url" class="form-label">Your News link !</label>
-        </div>
-        <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">hhttps://www.youtube.com/watch?v=</span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Berita di Indonesia</h2>
     </div>
     <!-- Search End -->
 
@@ -50,35 +42,20 @@
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Comment</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Source</th>
                                     <th scope="col">Sentiment</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($news as $news)
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
+                                    <td>{{ $news['published_date'] }}</td>
+                                    <td><a class='news-color' href="{{ $news['link']}}">{{ $news['title'] }}</a></td>
+                                    <td>{{ $news['source'] }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>12-13-2023</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sint nobis quos
-                                        dolorem iste sit, commodi optio aperiam, expedita laborum exercitationem
-                                        quibusdam impedit distinctio quas voluptatem accusamus ratione iusto qui?</td>
-                                    <td>Positif</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

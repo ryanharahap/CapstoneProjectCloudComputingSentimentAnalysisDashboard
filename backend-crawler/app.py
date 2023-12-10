@@ -43,3 +43,6 @@ def crawl_news():
 @cross_origin()
 def status():
   return "Hello World"
+
+if __name__ == "__main__":
+  app.run(debug=True, port=5001)

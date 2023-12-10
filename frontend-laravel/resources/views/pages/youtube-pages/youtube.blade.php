@@ -26,14 +26,14 @@
 
     <!-- Search Start -->
     <div class="search-bar">
-        <form action="/youtube-comments" method="GET">
+        <form action="youtube-crawl" method="GET">
             @csrf
             <div class="font">
-                <label for="basic-url" class="form-label">Your YouTube link !</label>
+                <label for="video_id" class="form-label">Your YouTube link !</label>
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
-                <input type="text" class="form-control" id="basic-url" name="video_id" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="video_id" name="video_id" aria-describedby="basic-addon3">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,11 +58,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($comments['items'] as $key => $comment)
+                                @foreach($youtube as $youtube)
                                 <tr>
-                                    <th scope="row">{{ $key + 1 }}</th>
-                                    <td>{{ $comment['snippet']['topLevelComment']['snippet']['publishedAt'] }}</td>
-                                    <td>{{ $comment['snippet']['topLevelComment']['snippet']['textDisplay'] }}</td>
+                                    <th scope="row">1</th>
+                                    <td>{{ $youtube['updated_at'] }}</td>
+                                    <td>{{ $youtube['comment'] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -72,9 +72,9 @@
     <br>
     <br>
     <h2 class="text-center mb-4">Google Trend in Indonesia</h2>
-    <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
-            <div class="col-sm-12 col-md-6 col-xl-12">
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="h-100 bg-light rounded p-4">
                     @foreach($googleTrends as $trend)
                     <div class="d-flex align-items-center border-bottom py-3">

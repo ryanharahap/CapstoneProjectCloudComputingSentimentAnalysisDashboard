@@ -40,7 +40,7 @@ class ApiController extends Controller
         // Periksa apakah permintaan berhasil
         if ($response->successful()) {
             $result = json_decode($response->getBody(), true);
-            
+
             if (empty($result['result'])) {
                 // Tampilkan pesan kesalahan di halaman yang sama
                 return back()->with('error', 'Playstore data not found');
@@ -64,6 +64,7 @@ class ApiController extends Controller
         // Periksa apakah permintaan berhasil
         if ($response->successful()) {
             $result = json_decode($response->getBody(), true);
+
             $newsResult = $result['result'];
 
             return view('pages/news-pages/news', ['news' => $newsResult]);

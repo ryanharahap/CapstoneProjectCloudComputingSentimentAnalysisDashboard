@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY .env .env
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+CMD exec gunicorn --bind 8080 app:app

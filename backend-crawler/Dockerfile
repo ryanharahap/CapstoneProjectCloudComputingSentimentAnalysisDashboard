@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 COPY .env .env
 
-CMD exec gunicorn --bind $PORT app:app
+CMD exec gunicorn --bind 0.0.0.0:$PORT app:app

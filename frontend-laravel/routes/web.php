@@ -23,6 +23,7 @@ Route::get('/', [TrendController::class, 'getTrends']);
 Route::get('login', function () { return view('authentication/login');});
 Route::get('register', function () { return view('authentication/register');});
 
+Route::get('news', function () { return view('pages/news-pages/news-search');});
 Route::get('news-crawl', [ApiController::class, 'crawlNews']);
 
 Route::get('youtube', function () { return view('pages/youtube-pages/youtube-search');});

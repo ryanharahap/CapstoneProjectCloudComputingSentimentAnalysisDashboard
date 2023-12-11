@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
+    // Youtube Controller START
     public function crawlYoutube(Request $request)
     {
         $url = 'http://localhost:5001/crawl/youtube';
@@ -20,7 +21,9 @@ class ApiController extends Controller
         if ($response->successful()) {
             $result = json_decode($response->getBody(), true);
             $youtubeResult = $result['result'];
-  
+
+            //$this->sendCrawlingResultToML($youtubeResult);
+
             return view('pages/youtube-pages/youtube', ['youtube' => $youtubeResult]);
         } else {
             // Tampilkan notifikasi error di frontend jika video_id tidak ditemukan
@@ -28,6 +31,26 @@ class ApiController extends Controller
         }
     }
 
+    // public function sendCrawlingResultToML($crawlingResult)
+    // {
+    //     $mlEndpoint = 'http://backend-ml-url/endpoint';
+    //     $data = [
+    //         'crawling_result' => $crawlingResult,
+    //         // Atau sesuaikan dengan struktur data yang dibutuhkan oleh backend ML
+    //     ];
+
+    //     $response = Http::post($mlEndpoint, $data);
+
+    //     // Periksa apakah permintaan berhasil
+    //     if (!$response->successful()) {
+    //         // Tampilkan notifikasi error jika terjadi kesalahan
+    //         // Anda juga bisa melakukan logging atau tindakan lainnya
+    //         \Log::error('Failed to send crawling result to ML backend');
+    //     }
+    // }
+    //Youtube Controller END
+
+    // Playstore Controller START
     public function crawlPlaystore(Request $request)
     {
         $url = 'http://localhost:5001/crawl/playstore';
@@ -54,7 +77,9 @@ class ApiController extends Controller
             return back()->with('error', 'Package Name not found');
         }
     }
+    // Playstore Controller END
 
+    // News Controller START
     public function crawlNews()
     {
         $url = 'http://localhost:5001/crawl/news';
@@ -72,4 +97,5 @@ class ApiController extends Controller
             return back()->with('error', 'Failed to crawl news');
         }
     }
+    // News Controller END
 }

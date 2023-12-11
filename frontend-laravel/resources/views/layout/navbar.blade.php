@@ -25,10 +25,10 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="youtube" class="dropdown-item">Youtube</a>
                             <a href="playstore" class="dropdown-item">Playstore</a>
-                            <a href="news-crawl" class="dropdown-item">News</a>
+                            <a href="news" class="dropdown-item">News</a>
                         </div>
                     </div>
                 </div>

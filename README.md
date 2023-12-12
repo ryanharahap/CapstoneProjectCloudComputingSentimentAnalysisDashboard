@@ -8,3 +8,5 @@ Run di CMD atau terminal folder laravel:
 
 `php artisan serve`
 <br />
+
+test

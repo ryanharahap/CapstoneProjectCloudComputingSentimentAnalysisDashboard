@@ -26,3 +26,13 @@ class NewsRequest(BaseModel):
   source: str
   link: str
   published_date: str
+
+class YoutubeList(BaseModel):
+  data: List[YoutubeRequest]
+
+class PlaystoreList(BaseModel):
+  data: List[PlaystoreRequest]
+
+class NewsList(BaseModel):
+  data: List[NewsRequest]
+

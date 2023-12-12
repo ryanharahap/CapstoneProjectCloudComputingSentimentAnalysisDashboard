@@ -2,12 +2,12 @@ FROM python:3.11-slim
 
 ENV PYTHONBUFFERED True
 
-ENV APP_HOME /app
+WORKDIR /app
 
-WORKDIR $APP_HOME
-
-COPY . ./
+COPY . /app
 
 RUN pip install -r requirements.txt
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+COPY .env .env
+
+CMD exec gunicorn --bind 0.0.0.0:$PORT app:app

@@ -64,11 +64,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($youtube as $index => $youtube)
+                                @foreach($youtube as $index => $data)
                                 <tr>
                                     <th scope="row">{{ $index + 1 }}</th>
-                                    <td>{{ $youtube['updated_at'] }}</td>
-                                    <td>{{ $youtube['comment'] }}</td>
+                                    <td>{{ $data['updated_at'] }}</td>
+                                    <td>{{ $data['comment'] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -88,5 +88,4 @@
     </div>
     <!-- Analysis End -->
 </div>
-
 <!-- Content End -->

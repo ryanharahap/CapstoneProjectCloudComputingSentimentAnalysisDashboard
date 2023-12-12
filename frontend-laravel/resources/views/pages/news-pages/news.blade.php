@@ -41,8 +41,8 @@
             <div class="col-sm-12 col-xl-9">
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Details Analysis</h6>
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="table-responsive" id="news-table-container">
+                        <table class="table" id="news-table">
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
@@ -78,5 +78,4 @@
     </div>
     <!-- Analysis End -->
 </div>
-
 <!-- Content End -->

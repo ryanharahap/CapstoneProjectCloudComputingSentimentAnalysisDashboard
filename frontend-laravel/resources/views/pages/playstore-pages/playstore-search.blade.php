@@ -14,10 +14,21 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                    <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="/login" class="dropdown-item">Log Out</a>
+                    <x-dropdown-link :href="route('profile.edit')">
+                        {{ __('Profile') }}
+                    </x-dropdown-link>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+    
+                        <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
                 </div>
             </div>
         </div>

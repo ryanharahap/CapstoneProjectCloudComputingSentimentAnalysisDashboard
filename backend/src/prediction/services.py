@@ -59,14 +59,13 @@ class PredictionService:
     
     for datum in data:
       # Convert to a sequence
+      self.tokenizer.fit_on_texts(datum.comment)
       sequences = self.tokenizer.texts_to_sequences(datum.comment)
       # Pad the sequence
       padded = pad_sequences(sequences, padding='post', maxlen=37)
       predictions = self.youtube_model.predict(padded)
-      if predictions[0] >= 0.5:
-        sentiment = "Positive"
-      else:
-        sentiment = "Negative"
+      print(predictions)
+      sentiment = "Negative" if predictions[0][0] >= 0.5 else "Positive"
 
       result.append({
         "author": datum.author,

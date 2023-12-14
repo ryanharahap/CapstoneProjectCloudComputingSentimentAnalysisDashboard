@@ -26,6 +26,11 @@
 
     <!-- Search Start -->
     <div class="search-bar">
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
         <form action="playstore-crawl" method="GET">
             @csrf
             <div class="font">
@@ -38,11 +43,6 @@
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
     </div>
     <!-- Search End -->
 
@@ -63,11 +63,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($playstore as $index => $playstore)
+                                @foreach($playstore as $index => $data)
                                 <tr>
                                     <th scope="row">{{ $index + 1 }}</th>
-                                    <td>{{ $playstore['submitted_at'] }}</td>
-                                    <td>{{ $playstore['review'] }}</td>
+                                    <td>{{ $data['submitted_at'] }}</td>
+                                    <td>{{ $data['review'] }}</td>
+                                    <td>{{ $data['sentiment'] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

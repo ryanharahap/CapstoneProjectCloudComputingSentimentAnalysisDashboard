@@ -53,16 +53,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($news as $index => $news)
+                                @foreach ($news as $index => $data)
                                 <tr>
-                                    <th scope="row">{{ $index + 1 }}</th>
-                                    <td>{{ $news['published_date'] }}</td>
-                                    <td><a class='news-color' href="{{ $news['link']}}">{{ $news['title'] }}</a></td>
-                                    <td>{{ $news['source'] }}</td>
+                                    <th scope="row">{{ $news->firstItem() + $loop->index }}</th>
+                                    <td>{{ $data['published_date'] }}</td>
+                                    <td><a class='news-color' href="{{ $data['link']}}">{{ $data['title'] }}</a></td>
+                                    <td>{{ $data['source'] }}</td>
+                                    <td>{{ $data['sentiment'] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $news->links('layout.bootstrap-5') }}
                     </div>
                 </div>
             </div>

@@ -26,6 +26,11 @@
 
     <!-- Search Start -->
     <div class="search-bar">
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
         <form action="news-crawl" method="GET">
             @csrf
             <div class="font">
@@ -34,11 +39,6 @@
             <br>
             <button type="submit" class="btn btn-primary">Start !!!</button>
         </form>
-        @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
     </div>
     <!-- Search End -->
 </div>

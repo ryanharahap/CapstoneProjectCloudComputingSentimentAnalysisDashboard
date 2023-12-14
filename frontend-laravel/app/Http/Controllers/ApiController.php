@@ -40,6 +40,10 @@ class ApiController extends Controller
 
             return view('pages/youtube-pages/youtube', [
                 'youtube' => $youtubeResult,
+                'wordcloud_url' => $result['wordcloud_url'],
+                'piechart_url' => $result['piechart_url'],
+                'positive_count' => $result['positive_count'],
+                'negative_count' => $result['negative_count'],
             ]);
         } else {
             return back()->with('error', 'Prediction Failed. Respons');
@@ -79,6 +83,10 @@ class ApiController extends Controller
 
             return view('pages/playstore-pages/playstore', [
                 'playstore' => $playstoreResult,
+                'wordcloud_url' => $result['wordcloud_url'],
+                'piechart_url' => $result['piechart_url'],
+                'positive_count' => $result['positive_count'],
+                'negative_count' => $result['negative_count'],
             ]);
         } else {
             return back()->with('error', 'Prediction Failed');
@@ -115,6 +123,10 @@ class ApiController extends Controller
 
             return view('pages/news-pages/news', [
                 'news' => $newsResult,
+                'wordcloud_url' => $result['wordcloud_url'],
+                'piechart_url' => $result['piechart_url'],
+                'positive_count' => $result['positive_count'],
+                'negative_count' => $result['negative_count'],
             ]);
         } else {
             return back()->with('error', 'Prediction Failed');

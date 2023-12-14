@@ -27,7 +27,7 @@
     var myChart6 = new Chart(ctx6, {
         type: "doughnut",
         data: {
-            labels: ["Positive", "Negative"],
+            labels: ["Posiive", "Negative"],
             datasets: [{
                 backgroundColor: [
                     "rgba(0, 156, 255, .7)",
@@ -40,9 +40,6 @@
             responsive: true
         }
     });
-
-    // pagination
-
 
 })(jQuery);
 

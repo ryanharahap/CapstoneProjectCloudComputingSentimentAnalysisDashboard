@@ -42,7 +42,8 @@
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Details Analysis</h6>
                     <div class="table-responsive" id="news-table-container">
-                        <table class="table" id="news-table">
+                        <table class="table table-responsive" style="max-height: 400px; overflow-y: auto;"
+                            id="news-table">
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
@@ -55,7 +56,7 @@
                             <tbody>
                                 @foreach ($news as $index => $data)
                                 <tr>
-                                    <th scope="row">{{ $news->firstItem() + $loop->index }}</th>
+                                    <th scope="row">{{ $index + 1 }}</th>
                                     <td>{{ $data['published_date'] }}</td>
                                     <td><a class='news-color' href="{{ $data['link']}}">{{ $data['title'] }}</a></td>
                                     <td>{{ $data['source'] }}</td>
@@ -64,7 +65,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $news->links('layout.bootstrap-5') }}
                     </div>
                 </div>
             </div>

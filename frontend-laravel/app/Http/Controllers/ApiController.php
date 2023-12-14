@@ -113,20 +113,8 @@ class ApiController extends Controller
             $result = json_decode($mlModelResponse->getBody(), true);
             $newsResult = $result['predictions'];
 
-            //pagination
-            $currentPage = Paginator::resolveCurrentPage('page');
-            $perPage = 10;
-
-            $paginatedNews = new LengthAwarePaginator(
-                array_slice($newsResult, ($currentPage - 1) * $perPage, $perPage),
-                count($newsResult),
-                $perPage,
-                $currentPage,
-                ['path' => Paginator::resolveCurrentPath()]
-            );
-
             return view('pages/news-pages/news', [
-                'news' => $paginatedNews,
+                'news' => $newsResult,
             ]);
         } else {
             return back()->with('error', 'Prediction Failed');

@@ -52,7 +52,7 @@
             <div class="col-sm-12 col-xl-9">
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Detail Analysis</h6>
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                         <table class="table">
                             <thead>
                                 <tr>

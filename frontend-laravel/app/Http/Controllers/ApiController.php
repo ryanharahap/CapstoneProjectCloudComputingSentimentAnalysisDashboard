@@ -51,46 +51,18 @@ class ApiController extends Controller
     // Playstore Controller START
     public function crawlPlaystore(Request $request)
     {
-        $packageName = $request->package_name;
 
-        if (session()->has('playstoreData') && session('playstoreData')['package_name'] === $packageName) {
-            $data = session('playstoreData');
+        $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/playstore';
+        $data = ['package_name' => $request->package_name];
+        $response = Http::post($url, $data);
 
-            $crawlResult = $data['result'];
-            $currentPage = Paginator::resolveCurrentPage('page');
-            $perPage = 10;
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            $crawlResult = $result['result'];
 
-            $paginatedPS = new LengthAwarePaginator(
-                array_slice($crawlResult, ($currentPage - 1) * $perPage, $perPage),
-                count($crawlResult),
-                $perPage,
-                $currentPage,
-                ['path' => Paginator::resolveCurrentPath()]
-            );
-
-            return view('pages/playstore-pages/playstore', [
-                'playstore' => $paginatedPS,
-            ]);
+            return $this->sendToPlaystoreModel($crawlResult);
         } else {
-            $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/playstore';
-            $data = ['package_name' => $request->package_name];
-            $response = Http::post($url, $data);
-
-            if ($response->successful()) {
-                $result = json_decode($response->getBody(), true);
-                $crawlResult = $result['result'];
-
-                $mlData = $this->sendToPlaystoreModel($crawlResult);
-
-                $mlResult = [
-                    'package_name' => $packageName,
-                    'result' => $mlData,
-                ];
-
-                return session()->put('playstoreData',  $mlResult);
-            } else {
-                return back()->with('error', 'Package Name not found');
-            }
+            return back()->with('error', 'Package Name not found');
         }
     }
 
@@ -105,7 +77,9 @@ class ApiController extends Controller
             $result = json_decode($mlModelResponse->getBody(), true);
             $playstoreResult = $result['predictions'];
 
-            return $playstoreResult;
+            return view('pages/playstore-pages/playstore', [
+                'playstore' => $playstoreResult,
+            ]);
         } else {
             return back()->with('error', 'Prediction Failed');
         }
@@ -116,36 +90,16 @@ class ApiController extends Controller
     // News Controller START
     public function crawlNews()
     {
-        if (session()->has('newsData')) {
-            $data = session('newsData');
-            $currentPage = Paginator::resolveCurrentPage('page');
-            $perPage = 10;
+        $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/news';
+        $response = Http::get($url);
 
-            $paginatedNews = new LengthAwarePaginator(
-                array_slice($data, ($currentPage - 1) * $perPage, $perPage),
-                count($data),
-                $perPage,
-                $currentPage,
-                ['path' => Paginator::resolveCurrentPath()]
-            );
+        if ($response->successful()) {
+            $result = json_decode($response->getBody(), true);
+            $crawlResult = $result['result'];
 
-            return view('pages/news-pages/news', [
-                'news' => $paginatedNews,
-            ]);
+            return $this->sendToNewsModel($crawlResult);
         } else {
-            $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/news';
-            $response = Http::get($url);
-
-            if ($response->successful()) {
-                $result = json_decode($response->getBody(), true);
-                $crawlResult = $result['result'];
-
-                $mlData = $this->sendToNewsModel($crawlResult);
-
-                return session(['newsData' => $mlData]);
-            } else {
-                return back()->with('error', 'Failed to crawl news');
-            }
+            return back()->with('error', 'Failed to crawl news');
         }
     }
     private function sendToNewsModel($data)
@@ -159,7 +113,21 @@ class ApiController extends Controller
             $result = json_decode($mlModelResponse->getBody(), true);
             $newsResult = $result['predictions'];
 
-            return $newsResult;
+            //pagination
+            $currentPage = Paginator::resolveCurrentPage('page');
+            $perPage = 10;
+
+            $paginatedNews = new LengthAwarePaginator(
+                array_slice($newsResult, ($currentPage - 1) * $perPage, $perPage),
+                count($newsResult),
+                $perPage,
+                $currentPage,
+                ['path' => Paginator::resolveCurrentPath()]
+            );
+
+            return view('pages/news-pages/news', [
+                'news' => $paginatedNews,
+            ]);
         } else {
             return back()->with('error', 'Prediction Failed');
         }

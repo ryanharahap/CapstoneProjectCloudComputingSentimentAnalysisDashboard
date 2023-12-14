@@ -10,7 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class ApiController extends Controller
 {
-    // Youtube Controller START
+    // Youtube Controller START-------------------------------------------------------------------------------------
     public function crawlYoutube(Request $request)
     {
         $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/youtube';
@@ -48,7 +48,7 @@ class ApiController extends Controller
     //Youtube Controller END---------------------------------------------------------------------------------------
 
 
-    // Playstore Controller START
+    // Playstore Controller START-------------------------------------------------------------------------------------
     public function crawlPlaystore(Request $request)
     {
 
@@ -87,7 +87,7 @@ class ApiController extends Controller
     // Playstore Controller END---------------------------------------------------------------------------------------
 
 
-    // News Controller START
+    // News Controller START-------------------------------------------------------------------------------------------
     public function crawlNews()
     {
         $url = 'https://sad-crawler-v2-t6ysugl5ra-as.a.run.app/crawl/news';

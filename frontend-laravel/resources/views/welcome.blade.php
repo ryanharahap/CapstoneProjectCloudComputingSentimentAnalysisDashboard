@@ -44,7 +44,7 @@
 
       <div class="logo me-auto ">
         
-        <h1><a href="index.html">SentDash</a></h1>
+        <h1><a href="/">SentDash</a></h1>
 
         
         <!-- Uncomment below if you prefer to use an image logo -->
